@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Form
+        </title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="str.scss" >
+
+
+    <style>
+body {
+  
+    margin: 0;
+    font-family: Nunito,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #757575;
+    text-align: left;
+    background-color: blue;
+
+}
+.text-center {
+    text-align: center;
+}
+
+.card {
+  
+  border-radius: .375rem;
+  width:400px;
+  margin:5%;
+    
+}
+.login-form{
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  padding:20px;
+  border-radius: .375rem;
+}
+.card-body{
+  padding:0px;
+}
+
+*{
+  margin: 0;
+  padding: 0;
+  font-family: 'Montserrat', sans-serif;
+
+}
+body{
+  background:rgb(51, 51, 51);
+}
+/* Global Styling */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  height: 100vh;
+  width: 100vw;
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Open Sans', sans-serif;
+}
+
+/* Button */
+.btn {
+  background: transparent;
+  width: 200px;
+  position: relative;
+  padding: 15px;
+  color: #1ECD97;
+  cursor: pointer;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  transition: all 500ms cubic-bezier(0.6, -0.28, 0.735, 0.045);
+  border-radius: 4px;
+  font-weight: 600;
+  overflow: hidden;
+  border: 2px solid #1ECD97;
+  text-decoration: none;
+}
+
+/* In Progress Button */
+.btn-progress {
+  width: 500px;
+  color: transparent;
+}
+
+.btn-fill:after {
+  content: '';
+  background: #1ECD97;
+  position: absolute;
+  top: 0; left: 0;
+  height: 100%;
+  width: 100%;
+  transform: scaleX(0);
+  transform-origin: 0;
+  display: block;
+  animation: fill 3.2s linear forwards;
+}
+
+/* Button Complete */
+.btn-complete {
+  padding: 10px;
+  width: 50px;
+  color: #fff;
+  pointer-events: none;
+}
+
+.btn-complete:after {
+  font-family: FontAwesome;
+  content: "\f00c";
+  color: #fff;
+  height: 100%;
+  padding-left: 3px;
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #1ECD97;
+}
+
+/* Animation */
+@keyframes fill {
+  from { transform: scaleX(0); }
+  to { transform: scaleX(1); }
+}
+body{
+  background:#cccccc;
+  margin:0;
+  padding:0;
+}
+/*=====Common Animation Settings===========*/
+
+    </style>
+    </head>
+    <body>
+        <h1><b>COMPLAINT REGISTRATION FORM</b>&nbsp;</h1>
+
+        <div class="background background--color-map"></div>
+   
+        <div id="canvas-shapes"></div>
+<div class="content">
+
+</div>  
+        <div class="container-login">
+            <div class="d-flex flex-row justify-content-center">
+              <div class="card">
+                  <div class="card-body">
+                    <div class="row">
+                      <div class="col-lg-12">
+                        <div class="login-form">
+                          <div class="text-center">
+                            <form action="connect.php" method = "post">
+                    <center>
+                        <div id="table">
+                    <table style="width:50%;height:600px;">
+                        <tr><div class="tab"><td>
+                            select Issue:
+                            </td></div>
+                            <td>
+                            <input type="radio" name="nature" value="system"><label for="system">System</label><br>
+                            <input type="radio" name="nature" value="maintance"><label for="maintance">maintenance</label><br>
+                        </td>
+                        <tr>
+                            <div id="tab"><td>System no:</td></div>
+                            <td><input type="number" name = "sysno" value = "0" placeholder="Enter system no..." ></td>
+                        </tr>
+                        <tr><div class="tab">
+                        <td>
+                            Enter maintaince Issue:
+                            </td></div>
+                            <td>
+                            <input type="checkbox" name="maint[]" value="bench">Bench<br>
+                            <input type="checkbox" name="maint[]" value="Fans">Fans<br>
+                            <input type="checkbox" name="maint[]" value="light">Light<br>
+                            <input type="checkbox" name="maint[]" value="projector">Projector<br>
+                            <input type="checkbox" name="maint[]" value="chair">Chair<br>
+                            </td>
+                        <tr>
+                            <div id="tab"><td>Room no:</td></div>
+                            <td><input type="text" name = "room" placeholder="Enter room no..." value="None"></td>
+                        </tr>
+                        <tr>
+                            <div id="tab"><td>Description:</td></div>
+                            <td><input type="text" name = "des" placeholder="Enter Description(optional)">
+                        </tr>
+                        <div class="tab"><th colspan="2"></div>
+                            <input class='btn' type="submit">
+                        </th>
+
+                    </table>
+                </center>   
+        </form>
+        </div>
+        </div>
+    </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+        </div>
+        <script>
+            //// You Can Change shapes With "circle" , "square" , "triangle", "hexa" or custom image at Bottom of Js code////
+        </script>
+    </body>
+</html>
